@@ -14,10 +14,11 @@ radius = 3.0
 script = ExtResource("1_n61yp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8, 5.5)
+position = Vector2(-0.0100002, 0.15)
 shape = SubResource("RectangleShape2D_hewvy")
 
 [node name="Wheel 1" type="RigidBody2D" parent="."]
+position = Vector2(-8.01, -5.35)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wheel 1"]
 position = Vector2(3, 15)
@@ -34,6 +35,7 @@ node_a = NodePath("../..")
 node_b = NodePath("..")
 
 [node name="Wheel 2" type="RigidBody2D" parent="."]
+position = Vector2(-8.01, -5.35)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wheel 2"]
 position = Vector2(13, 15)
@@ -50,6 +52,6 @@ node_a = NodePath("../..")
 node_b = NodePath("..")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(8.25, 5.75)
+position = Vector2(0.240001, 0.4)
 scale = Vector2(0.06, 0.06)
 texture = ExtResource("2_kqw2i")
