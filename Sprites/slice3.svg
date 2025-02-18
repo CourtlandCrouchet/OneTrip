@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 77 70" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+    <g transform="matrix(1,0,0,1,-1190,-667)">
+        <g>
+            <g transform="matrix(1,0,0,1,0.021018,1.4603)">
+                <path d="M1212,676.524L1212,686L1208,686C1207.75,682.798 1207.77,679.643 1208,676.524C1214.71,676.166 1212.84,676.394 1212,676.524Z" style="stroke:black;stroke-width:4px;"/>
+            </g>
+            <g transform="matrix(0.013474,-0.999909,2.08938,0.0281549,-211.182,1922.63)">
+                <path d="M1212,676.524L1212,686L1208,686C1207.77,682.841 1207.77,679.683 1208,676.524L1212,676.524Z" style="fill:rgb(238,0,255);stroke:black;stroke-width:2.44px;"/>
+            </g>
+            <path d="M1259.55,723.975L1212,723.975C1211.44,708.276 1211.53,692.576 1212,676.876C1224.13,676.114 1236.26,675.999 1248.39,676.524C1252.89,692.393 1256.49,708.191 1259.55,723.975Z" style="fill:rgb(67,246,237);stroke:black;stroke-width:4px;"/>
+            <g transform="matrix(3.2896e-17,-0.56506,0.756719,4.50633e-17,712.617,1398.7)">
+                <path d="M1231.5,700.25C1230.42,701.271 1229.55,702.88 1229.55,704.625C1229.55,706.37 1230.42,707.979 1231.5,709C1227.91,709 1225,707.04 1225,704.625C1225,702.21 1227.91,700.25 1231.5,700.25Z" style="stroke:black;stroke-width:2.99px;"/>
+            </g>
+            <g transform="matrix(1.08381,0.000878957,-0.00056769,0.7,-99.5762,219.898)">
+                <path d="M1258.5,710C1258.88,716.666 1258.88,723.333 1258.5,730C1236.67,729.671 1214.83,729.04 1193,728C1192.7,722.667 1192.72,717.334 1193,712C1214.83,710.576 1236.67,709.831 1258.5,710Z" style="fill:rgb(246,237,67);stroke:black;stroke-width:4.38px;"/>
+            </g>
+            <g transform="matrix(1.15152,0,0,0.846197,-175,114.933)">
+                <path d="M1204.27,705C1204.25,709.286 1204.48,713.627 1204.5,718.004C1199,718.197 1193.5,718.2 1188,718.004C1187.69,713.669 1187.69,709.335 1188,705C1193.42,704.709 1198.85,704.723 1204.27,705Z" style="fill:rgb(246,237,67);stroke:black;stroke-width:3.96px;"/>
+            </g>
+            <g transform="matrix(0.804888,-0.11312,0.115281,0.82027,227.2,262.256)">
+                <ellipse cx="1173" cy="686.262" rx="8" ry="8.738" style="fill:white;"/>
+                <clipPath id="_clip1">
+                    <ellipse cx="1173" cy="686.262" rx="8" ry="8.738"/>
+                </clipPath>
+                <g clip-path="url(#_clip1)">
+                    <g transform="matrix(1.21834,0.168016,-0.171227,1.1955,-104.677,-333.961)">
+                        <circle cx="1149" cy="690" r="3" style="stroke:black;stroke-opacity:0;stroke-width:2px;"/>
+                    </g>
+                </g>
+                <ellipse cx="1173" cy="686.262" rx="8" ry="8.738" style="fill:none;stroke:black;stroke-width:2.44px;"/>
+            </g>
+            <g transform="matrix(0.804888,-0.11312,0.115281,0.82027,216.307,262.256)">
+                <ellipse cx="1173" cy="686.262" rx="8" ry="8.738" style="fill:white;"/>
+                <clipPath id="_clip2">
+                    <ellipse cx="1173" cy="686.262" rx="8" ry="8.738"/>
+                </clipPath>
+                <g clip-path="url(#_clip2)">
+                    <g transform="matrix(1.21834,0.168016,-0.171227,1.1955,-104.677,-333.961)">
+                        <circle cx="1149" cy="690" r="3" style="stroke:black;stroke-opacity:0;stroke-width:2px;"/>
+                    </g>
+                </g>
+                <ellipse cx="1173" cy="686.262" rx="8" ry="8.738" style="fill:none;stroke:black;stroke-width:2.44px;"/>
+            </g>
+            <g transform="matrix(-0.77906,-1.68442,1.56966,0.483235,1093.7,2402.55)">
+                <path d="M1193,674L1187,679" style="fill:none;stroke:black;stroke-width:1.97px;"/>
+            </g>
+            <g transform="matrix(-0.77906,-1.68442,1.56966,0.483235,1103.7,2402.55)">
+                <path d="M1193,674L1187,679" style="fill:none;stroke:black;stroke-width:1.97px;"/>
+            </g>
+            <g transform="matrix(-0.77906,-1.68442,1.56966,0.483235,1087.44,2402.55)">
+                <path d="M1193,674L1187,679" style="fill:none;stroke:black;stroke-width:1.97px;"/>
+            </g>
+            <g transform="matrix(-0.728765,-1.63412,1.52775,0.441322,1038.46,2362.55)">
+                <path d="M1193,674L1187,679" style="fill:none;stroke:black;stroke-width:1.97px;"/>
+            </g>
+            <g transform="matrix(-0.678469,-1.58383,1.48584,0.399408,1000.96,2331.31)">
+                <path d="M1193,674L1187,679" style="fill:none;stroke:black;stroke-width:1.97px;"/>
+            </g>
+            <g transform="matrix(0.954055,-0.0499193,0.0436179,0.833625,25.1399,178.542)">
+                <g transform="matrix(1.18843,-1.64928e-17,1.37976e-17,2.14642,-219.882,-719.064)">
+                    <ellipse cx="1220" cy="646.5" rx="5" ry="1.5" style="fill:rgb(246,67,76);stroke:black;stroke-width:1.33px;"/>
+                </g>
+                <g transform="matrix(1.22522,0,0,1.14676,-267.671,-73.6213)">
+                    <clipPath id="_clip3">
+                        <rect x="1216.51" y="642.349" width="11.734" height="4.713"/>
+                    </clipPath>
+                    <g clip-path="url(#_clip3)">
+                        <path d="M1227.27,648.295L1217.48,648.295C1217.54,646.285 1217.82,644.304 1218.29,642.349L1226.45,642.349C1226.99,644.315 1227.18,646.298 1227.27,648.295Z" style="fill:rgb(246,67,76);stroke:black;stroke-width:1.87px;"/>
+                    </g>
+                </g>
+                <g transform="matrix(1.00977,0,0,1.33333,-1.92066,-199)">
+                    <ellipse cx="1220" cy="646.5" rx="5" ry="1.5" style="fill:rgb(246,67,76);stroke:black;stroke-width:1.92px;"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
