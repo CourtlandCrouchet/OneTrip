@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://b0lcnp5xrh7j6"]
+[gd_scene load_steps=8 format=3 uid="uid://b0lcnp5xrh7j6"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_n61yp"]
 
@@ -13,6 +13,17 @@ colors = PackedColorArray(1, 0, 0, 1, 1, 1, 1, 1)
 gradient = SubResource("Gradient_d6yks")
 width = 1
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_nhy7s"]
+radius = 3.0
+
+[sub_resource type="Gradient" id="Gradient_yfrjq"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(0.237539, 0.237539, 0.237539, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_5xp7a"]
+gradient = SubResource("Gradient_yfrjq")
+width = 1
+
 [node name="Player" type="RigidBody2D"]
 script = ExtResource("1_n61yp")
 
@@ -24,3 +35,35 @@ shape = SubResource("RectangleShape2D_hewvy")
 position = Vector2(8.25, 5.75)
 scale = Vector2(17.5, 12.5)
 texture = SubResource("GradientTexture1D_ob4bc")
+
+[node name="Wheel 1" type="RigidBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wheel 1"]
+position = Vector2(3, 15)
+shape = SubResource("CircleShape2D_nhy7s")
+
+[node name="Sprite2D" type="Sprite2D" parent="Wheel 1"]
+position = Vector2(3, 15)
+scale = Vector2(4.50977, 4)
+texture = SubResource("GradientTexture1D_5xp7a")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="Wheel 1"]
+position = Vector2(3, 15)
+node_a = NodePath("../..")
+node_b = NodePath("..")
+
+[node name="Wheel 2" type="RigidBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wheel 2"]
+position = Vector2(13, 15)
+shape = SubResource("CircleShape2D_nhy7s")
+
+[node name="Sprite2D" type="Sprite2D" parent="Wheel 2"]
+position = Vector2(13, 15)
+scale = Vector2(4.50977, 4)
+texture = SubResource("GradientTexture1D_5xp7a")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="Wheel 2"]
+position = Vector2(13, 15)
+node_a = NodePath("../..")
+node_b = NodePath("..")
