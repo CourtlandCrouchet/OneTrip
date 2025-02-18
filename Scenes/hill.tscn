@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://ytbbf38ay7fn"]
+
+[sub_resource type="Gradient" id="Gradient_ccl3e"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(1, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_3tvkb"]
+gradient = SubResource("Gradient_ccl3e")
+
+[node name="Hill" type="StaticBody2D"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(0, 0, 135, -18, 167, 0)
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+texture = SubResource("GradientTexture1D_3tvkb")
+polygon = PackedVector2Array(0, 0, 135, -18, 167, 0)
