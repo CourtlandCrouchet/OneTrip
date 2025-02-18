@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://b0lcnp5xrh7j6"]
+[gd_scene load_steps=9 format=3 uid="uid://b0lcnp5xrh7j6"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_n61yp"]
+[ext_resource type="PackedScene" uid="uid://curu24h07whn7" path="res://Scenes/arm.tscn" id="2_ihkd7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hewvy"]
 size = Vector2(16, 11)
@@ -25,6 +26,7 @@ gradient = SubResource("Gradient_yfrjq")
 width = 1
 
 [node name="Player" type="RigidBody2D"]
+mass = 3.0
 script = ExtResource("1_n61yp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -65,5 +67,18 @@ texture = SubResource("GradientTexture1D_5xp7a")
 
 [node name="PinJoint2D" type="PinJoint2D" parent="Wheel 2"]
 position = Vector2(13, 15)
+node_a = NodePath("../..")
+node_b = NodePath("..")
+
+[node name="Arm" parent="." instance=ExtResource("2_ihkd7")]
+position = Vector2(19, 9)
+
+[node name="PinJoint2D" type="PinJoint2D" parent="Arm"]
+position = Vector2(1.90735e-06, 2)
+node_a = NodePath("../..")
+node_b = NodePath("..")
+
+[node name="PinJoint2D2" type="PinJoint2D" parent="Arm"]
+position = Vector2(1.90735e-06, -8)
 node_a = NodePath("../..")
 node_b = NodePath("..")
