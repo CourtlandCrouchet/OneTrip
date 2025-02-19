@@ -41,6 +41,7 @@ polygon = PackedVector2Array(312, -48, 320, -48, 320, -8, 312, -8)
 
 [node name="Player" parent="." instance=ExtResource("2_1okup")]
 position = Vector2(16, 8)
+mass = 30.0
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(45, -20)
@@ -60,6 +61,12 @@ position = Vector2(0, 22)
 
 [node name="Hill" parent="." instance=ExtResource("4_blmfu")]
 position = Vector2(42, 25)
+
+[node name="Box3" parent="." instance=ExtResource("3_nybnc")]
+position = Vector2(39, -37)
+
+[node name="Box2" parent="." instance=ExtResource("3_nybnc")]
+position = Vector2(39, -19)
 
 [node name="Box" parent="." instance=ExtResource("3_nybnc")]
 position = Vector2(40, 0)

@@ -1,18 +1,28 @@
-[gd_scene load_steps=7 format=3 uid="uid://b0lcnp5xrh7j6"]
+[gd_scene load_steps=10 format=3 uid="uid://b0lcnp5xrh7j6"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_n61yp"]
 [ext_resource type="PackedScene" uid="uid://curu24h07whn7" path="res://Scenes/arm.tscn" id="2_ihkd7"]
 [ext_resource type="Texture2D" uid="uid://bqxfxplx645fn" path="res://Sprites/slice3.svg" id="2_kqw2i"]
 [ext_resource type="Texture2D" uid="uid://dbfkn3y6oj0ts" path="res://Sprites/slice1.svg" id="3_q6n6w"]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_7qnxl"]
+absorbent = true
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hewvy"]
 size = Vector2(16, 11)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_4vvyj"]
+absorbent = true
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nhy7s"]
 radius = 3.0
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kibed"]
+absorbent = true
+
 [node name="Player" type="RigidBody2D"]
 mass = 10.0
+physics_material_override = SubResource("PhysicsMaterial_7qnxl")
 script = ExtResource("1_n61yp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -21,6 +31,7 @@ shape = SubResource("RectangleShape2D_hewvy")
 
 [node name="Wheel 1" type="RigidBody2D" parent="."]
 position = Vector2(-8.01, -5.35)
+physics_material_override = SubResource("PhysicsMaterial_4vvyj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wheel 1"]
 position = Vector2(3, 15)
@@ -38,6 +49,7 @@ node_b = NodePath("..")
 
 [node name="Wheel 2" type="RigidBody2D" parent="."]
 position = Vector2(-8.01, -5.35)
+physics_material_override = SubResource("PhysicsMaterial_kibed")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wheel 2"]
 position = Vector2(13, 15)
@@ -57,17 +69,10 @@ node_b = NodePath("..")
 position = Vector2(11, 4)
 
 [node name="PinJoint2D" type="PinJoint2D" parent="Arm"]
-visible = false
 position = Vector2(1.90735e-06, 2)
 node_a = NodePath("../..")
 node_b = NodePath("..")
-
-[node name="PinJoint2D2" type="PinJoint2D" parent="Arm"]
-visible = false
-position = Vector2(1.90735e-06, -8)
-node_a = NodePath("../..")
-node_b = NodePath("..")
-motor_enabled = true
+angular_limit_enabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0.240001, 0.4)
