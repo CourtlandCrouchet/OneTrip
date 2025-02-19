@@ -3,13 +3,16 @@
 [ext_resource type="Texture2D" uid="uid://bgveym5k01bch" path="res://Sprites/slice2.svg" id="1_i6bum"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_h3ibi"]
+friction = 100.0
 absorbent = true
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3kqoj"]
 size = Vector2(16, 16)
 
 [node name="Box" type="RigidBody2D"]
+mass = 0.1
 physics_material_override = SubResource("PhysicsMaterial_h3ibi")
+can_sleep = false
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.125, 0.125)
