@@ -13,8 +13,6 @@ script = ExtResource("1_a4636")
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2(0.4, 1.4)
-motion_mirroring = Vector2(612, 0)
 
 [node name="Warehouse" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 z_index = -1
