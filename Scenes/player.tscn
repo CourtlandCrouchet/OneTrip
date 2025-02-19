@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://b0lcnp5xrh7j6"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_n61yp"]
-[ext_resource type="PackedScene" path="res://Scenes/arm.tscn" id="2_ihkd7"]
+[ext_resource type="PackedScene" uid="uid://1363gqqom0hw" path="res://Scenes/arm.tscn" id="2_ihkd7"]
 [ext_resource type="Texture2D" uid="uid://bqxfxplx645fn" path="res://Sprites/slice3.svg" id="2_kqw2i"]
 [ext_resource type="Texture2D" uid="uid://dbfkn3y6oj0ts" path="res://Sprites/slice1.svg" id="3_q6n6w"]
 
@@ -54,17 +54,20 @@ node_a = NodePath("../..")
 node_b = NodePath("..")
 
 [node name="Arm" parent="." instance=ExtResource("2_ihkd7")]
-position = Vector2(19, 9)
+position = Vector2(11, 4)
 
 [node name="PinJoint2D" type="PinJoint2D" parent="Arm"]
+visible = false
 position = Vector2(1.90735e-06, 2)
 node_a = NodePath("../..")
 node_b = NodePath("..")
 
 [node name="PinJoint2D2" type="PinJoint2D" parent="Arm"]
+visible = false
 position = Vector2(1.90735e-06, -8)
 node_a = NodePath("../..")
 node_b = NodePath("..")
+motor_enabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0.240001, 0.4)
