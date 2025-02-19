@@ -1,14 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://curu24h07whn7"]
+[gd_scene load_steps=4 format=3 uid="uid://1363gqqom0hw"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_s0kvt"]
 absorbent = true
 
-[sub_resource type="Gradient" id="Gradient_fdbr6"]
+[sub_resource type="Gradient" id="Gradient_qifrt"]
 offsets = PackedFloat32Array(0)
 colors = PackedColorArray(0, 0, 0, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_ksknm"]
-gradient = SubResource("Gradient_fdbr6")
+gradient = SubResource("Gradient_qifrt")
 
 [node name="Arm" type="RigidBody2D"]
 position = Vector2(0, -3)
