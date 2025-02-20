@@ -1,0 +1,123 @@
+[gd_scene load_steps=13 format=3 uid="uid://qa8oidxwyqqk"]
+
+[ext_resource type="PackedScene" uid="uid://dqsnvsllgrjvm" path="res://Scenes/floor.tscn" id="1_sgn7u"]
+[ext_resource type="PackedScene" uid="uid://ytbbf38ay7fn" path="res://Scenes/hill.tscn" id="2_ocbiv"]
+[ext_resource type="Texture2D" uid="uid://bqxfxplx645fn" path="res://Sprites/slice3.svg" id="3_dda21"]
+[ext_resource type="Script" path="res://Scenes/player_controller.gd" id="3_g0mi7"]
+[ext_resource type="Texture2D" uid="uid://bgveym5k01bch" path="res://Sprites/slice2.svg" id="5_vu7k2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dopmh"]
+size = Vector2(1.91919, 23.8877)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_apcq1"]
+size = Vector2(27.94, 2.2014)
+
+[sub_resource type="Gradient" id="Gradient_fdbr6"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_yalqq"]
+gradient = SubResource("Gradient_fdbr6")
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gk45f"]
+radius = 14.0
+height = 36.0
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vu0hk"]
+rough = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r6wmb"]
+size = Vector2(18, 18)
+
+[node name="PhysicsTesting" type="Node2D"]
+
+[node name="Floor" parent="." instance=ExtResource("1_sgn7u")]
+position = Vector2(0, 22)
+
+[node name="Hill" parent="." instance=ExtResource("2_ocbiv")]
+position = Vector2(146, 23)
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(50, -6)
+script = ExtResource("3_g0mi7")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Player"]
+position = Vector2(17.3871, -1.82996)
+shape = SubResource("RectangleShape2D_dopmh")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Player"]
+position = Vector2(30.4134, 9.25588)
+shape = SubResource("RectangleShape2D_apcq1")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+position = Vector2(1.90735e-06, -1.42109e-14)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_dda21")
+
+[node name="VSprite2D" type="Sprite2D" parent="Player"]
+position = Vector2(17.4, -1.8)
+scale = Vector2(0.00781251, 24)
+texture = SubResource("GradientTexture1D_yalqq")
+
+[node name="HSprite2D" type="Sprite2D" parent="Player"]
+position = Vector2(30.4, 9.2)
+scale = Vector2(0.109375, 2.25)
+texture = SubResource("GradientTexture1D_yalqq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(0, 4)
+shape = SubResource("CapsuleShape2D_gk45f")
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(45, -20)
+zoom = Vector2(5, 5)
+position_smoothing_enabled = true
+position_smoothing_speed = 4.0
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.15
+drag_top_margin = 1.0
+drag_right_margin = 0.15
+drag_bottom_margin = 1.0
+editor_draw_drag_margin = true
+
+[node name="Box" type="RigidBody2D" parent="."]
+position = Vector2(80.0656, -8.42081)
+physics_material_override = SubResource("PhysicsMaterial_vu0hk")
+linear_damp = 1.0
+angular_damp = 1.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Box"]
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("5_vu7k2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Box"]
+shape = SubResource("RectangleShape2D_r6wmb")
+
+[node name="Box2" type="RigidBody2D" parent="."]
+position = Vector2(80.066, -57.421)
+physics_material_override = SubResource("PhysicsMaterial_vu0hk")
+linear_damp = 1.0
+angular_damp = 1.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Box2"]
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("5_vu7k2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Box2"]
+shape = SubResource("RectangleShape2D_r6wmb")
+
+[node name="Box3" type="RigidBody2D" parent="."]
+position = Vector2(81, -11)
+physics_material_override = SubResource("PhysicsMaterial_vu0hk")
+linear_damp = 1.0
+angular_damp = 1.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Box3"]
+position = Vector2(0.684402, -21.8292)
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("5_vu7k2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Box3"]
+position = Vector2(0.684402, -21.8292)
+shape = SubResource("RectangleShape2D_r6wmb")

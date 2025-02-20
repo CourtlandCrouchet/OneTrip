@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://b0lcnp5xrh7j6"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_n61yp"]
-[ext_resource type="PackedScene" uid="uid://curu24h07whn7" path="res://Scenes/arm.tscn" id="2_ihkd7"]
+[ext_resource type="PackedScene" uid="uid://1363gqqom0hw" path="res://Scenes/arm.tscn" id="2_ihkd7"]
 [ext_resource type="Texture2D" uid="uid://bqxfxplx645fn" path="res://Sprites/slice3.svg" id="2_kqw2i"]
 [ext_resource type="Texture2D" uid="uid://dbfkn3y6oj0ts" path="res://Sprites/slice1.svg" id="3_q6n6w"]
 
@@ -73,6 +73,11 @@ position = Vector2(1.90735e-06, 2)
 node_a = NodePath("../..")
 node_b = NodePath("..")
 angular_limit_enabled = true
+
+[node name="PinJoint2D2" type="PinJoint2D" parent="Arm"]
+position = Vector2(27, 2)
+node_a = NodePath("../..")
+node_b = NodePath("..")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0.240001, 0.4)
