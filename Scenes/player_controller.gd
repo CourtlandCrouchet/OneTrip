@@ -37,4 +37,4 @@ func _physics_process(delta: float) -> void:
 		if collision.get_collider() is RigidBody2D:
 			var rb = collision.get_collider() as RigidBody2D
 			var push_force = (PUSH_FORCE * velocity.length() / SPEED) + MIN_PUSH_FORCE
-			rb.apply_central_force(-collision.get_normal() * push_force)
+			rb.apply_central_impulse(-collision.get_normal() * push_force)

@@ -83,7 +83,6 @@ editor_draw_drag_margin = true
 
 [node name="Box" type="RigidBody2D" parent="."]
 position = Vector2(80.0656, -8.42081)
-mass = 0.1
 physics_material_override = SubResource("PhysicsMaterial_vu0hk")
 linear_damp = 1.0
 angular_damp = 1.0
