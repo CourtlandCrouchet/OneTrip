@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bolejmjsmhqqg"]
+
+[sub_resource type="Gradient" id="Gradient_wqj7w"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(1, 1, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_cmagi"]
+gradient = SubResource("Gradient_wqj7w")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_obgkx"]
+size = Vector2(128, 384)
+
+[node name="WinZone" type="Area2D" groups=["WinZone"]]
+
+[node name="Sprite2D" type="Sprite2D" parent="." groups=["WinZone"]]
+position = Vector2(0, 16)
+scale = Vector2(0.52, 30.52)
+texture = SubResource("GradientTexture1D_cmagi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["WinZone"]]
+shape = SubResource("RectangleShape2D_obgkx")
