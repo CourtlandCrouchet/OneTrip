@@ -71,6 +71,7 @@ position = Vector2(11, 4)
 position = Vector2(1.90735e-06, 2)
 node_a = NodePath("../..")
 node_b = NodePath("..")
+angular_limit_enabled = true
 angular_limit_lower = -0.261799
 angular_limit_upper = -0.174533
 

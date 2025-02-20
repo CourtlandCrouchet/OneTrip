@@ -60,13 +60,13 @@ editor_draw_drag_margin = true
 position = Vector2(0, 22)
 
 [node name="Hill" parent="." instance=ExtResource("4_blmfu")]
-position = Vector2(104, 55)
+position = Vector2(81, 28)
 
 [node name="Box3" parent="." instance=ExtResource("3_nybnc")]
-position = Vector2(39, -37)
+position = Vector2(42, -37)
 
 [node name="Box2" parent="." instance=ExtResource("3_nybnc")]
-position = Vector2(39, -19)
+position = Vector2(42, -19)
 
 [node name="Box" parent="." instance=ExtResource("3_nybnc")]
-position = Vector2(40, 0)
+position = Vector2(43, 0)
