@@ -10,13 +10,14 @@ width = 1
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qn4f3"]
 size = Vector2(576, 69)
 
-[node name="Floor" type="StaticBody2D"]
+[node name="Floor" type="StaticBody2D" groups=["Floor"]]
+collision_layer = 3
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." groups=["Floor"]]
 position = Vector2(287.75, 34.75)
 scale = Vector2(576.5, 70.5)
 texture = SubResource("GradientTexture1D_qhfat")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Floor"]]
 position = Vector2(288, 34.5)
 shape = SubResource("RectangleShape2D_qn4f3")

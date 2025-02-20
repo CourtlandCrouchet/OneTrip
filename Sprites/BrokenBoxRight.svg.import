@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqxfxplx645fn"
-path="res://.godot/imported/slice3.svg-f145ff703bae5c5b0dae74c37bbf6dc9.ctex"
+uid="uid://7u2t1usaoq2g"
+path="res://.godot/imported/BrokenBoxRight.svg-9b54462e8b9eb12e80cf6509e98d4e9b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/slice3.svg"
-dest_files=["res://.godot/imported/slice3.svg-f145ff703bae5c5b0dae74c37bbf6dc9.ctex"]
+source_file="res://Sprites/BrokenBoxRight.svg"
+dest_files=["res://.godot/imported/BrokenBoxRight.svg-9b54462e8b9eb12e80cf6509e98d4e9b.ctex"]
 
 [params]
 

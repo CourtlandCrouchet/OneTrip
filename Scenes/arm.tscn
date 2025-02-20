@@ -16,7 +16,7 @@ gradient = SubResource("Gradient_ruc5e")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mqrgc"]
 size = Vector2(28, 2)
 
-[node name="Arm" type="RigidBody2D"]
+[node name="Arm" type="RigidBody2D" groups=["Player"]]
 position = Vector2(0, -3)
 mass = 0.2
 physics_material_override = SubResource("PhysicsMaterial_s0kvt")
