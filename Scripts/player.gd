@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-var movement_force = 1000
+var movement_force = 2000
 const MIN_ANGLE = deg_to_rad(-90)
 const MAX_ANGLE = deg_to_rad(-2)
 const P_GAIN = 500000.0

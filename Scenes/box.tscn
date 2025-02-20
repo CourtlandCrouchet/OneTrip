@@ -3,14 +3,15 @@
 [ext_resource type="Texture2D" uid="uid://bgveym5k01bch" path="res://Sprites/slice2.svg" id="1_i6bum"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_h3ibi"]
-friction = 50.0
+friction = 25.0
+bounce = 0.8
 absorbent = true
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3kqoj"]
 size = Vector2(16, 16)
 
 [node name="Box" type="RigidBody2D"]
-mass = 0.4
+mass = 0.1
 physics_material_override = SubResource("PhysicsMaterial_h3ibi")
 linear_damp = 4.0
 angular_damp = 4.0
