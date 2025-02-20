@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-var movement_force = 2000
+var movement_force = 1000
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

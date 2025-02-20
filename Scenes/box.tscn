@@ -11,8 +11,8 @@ size = Vector2(16, 16)
 
 [node name="Box" type="RigidBody2D"]
 physics_material_override = SubResource("PhysicsMaterial_h3ibi")
-linear_damp = 1.0
-angular_damp = 1.0
+linear_damp = 2.0
+angular_damp = 2.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.125, 0.125)
