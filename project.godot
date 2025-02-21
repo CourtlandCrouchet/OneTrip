@@ -21,6 +21,7 @@ WinZone=""
 Player=""
 Box=""
 Floor=""
+StackItem=""
 
 [input]
 
