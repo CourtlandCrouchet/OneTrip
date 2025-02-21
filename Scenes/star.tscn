@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://b77o5k7ht701v"]
+
+[ext_resource type="Texture2D" uid="uid://b6ltbaeh43tj8" path="res://Sprites/star.png" id="1_4umjp"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_h2fiv"]
+friction = 0.5
+bounce = 0.8
+
+[node name="Star" type="RigidBody2D" groups=["Box"]]
+scale = Vector2(-1, 1)
+mass = 0.1
+physics_material_override = SubResource("PhysicsMaterial_h2fiv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 0.538454)
+scale = Vector2(0.0750704, 0.0706411)
+texture = ExtResource("1_4umjp")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-1.71032e-06, 0.535653)
+scale = Vector2(0.00700546, 0.0150186)
+polygon = PackedVector2Array(0, -536, 322.26, -131, 1367.3, -131, 538.635, 125, 856.474, 563.591, -4.60372, 286, -835.575, 545, -540.937, 129, -1378.81, -127, -319.959, -129)
