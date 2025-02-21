@@ -13,6 +13,6 @@ physics_material_override = SubResource("PhysicsMaterial_51wjr")
 scale = Vector2(0.07, 0.07)
 polygon = PackedVector2Array(-15, -104, 15, -104, 22, -79, 39, -72, 62, -84, 84, -64, 71, -40, 79, -23, 104, -16, 105, 15, 79, 22, 73, 38, 85, 63, 65, 84, 39, 72, 23, 78, 16, 104, -16, 104, -23, 79, -40, 72, -64, 84, -85, 63, -72, 39, -79, 22, -105, 14, -105, -16, -79, -23, -72, -40, -84, -65, -62, -85, -40, -72, -22, -79)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." groups=["Box"]]
 scale = Vector2(0.07, 0.07)
 texture = ExtResource("1_7wims")
