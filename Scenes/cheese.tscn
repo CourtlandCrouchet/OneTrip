@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://cdpgvnmv8rbn4"]
+
+[ext_resource type="Script" path="res://Scenes/cheese.gd" id="1_5laxu"]
+[ext_resource type="Texture2D" uid="uid://ddy0gtu4kjbws" path="res://Sprites/cheese.png" id="1_syu0d"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_x1tfk"]
+friction = 0.7
+bounce = 0.2
+absorbent = true
+
+[node name="Cheese" type="RigidBody2D" groups=["Box"]]
+mass = 0.1
+physics_material_override = SubResource("PhysicsMaterial_x1tfk")
+contact_monitor = true
+max_contacts_reported = 4
+script = ExtResource("1_5laxu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.025, 0.025)
+texture = ExtResource("1_syu0d")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.025, 0.025)
+polygon = PackedVector2Array(-4, -341, 289, 257, -275, 262)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
