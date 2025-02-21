@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://buia70nn8k8ep"]
+[gd_scene load_steps=6 format=3 uid="uid://ks65mywbcl5q"]
 
 [ext_resource type="Texture2D" uid="uid://cgn3u8uri075y" path="res://Sprites/BrokenBoxLeft.svg" id="1_uxufs"]
 [ext_resource type="Script" path="res://Scenes/broken_box.gd" id="1_w1r6n"]

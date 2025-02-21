@@ -1,13 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://cdue0qa0ddfa7"]
+[gd_scene load_steps=4 format=3 uid="uid://cdue0qa0ddfa7"]
 
 [ext_resource type="Texture2D" uid="uid://b1abvg14cirfb" path="res://Sprites/gear.png" id="1_7wims"]
+[ext_resource type="Script" path="res://Scenes/gear.gd" id="1_vef3n"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_51wjr"]
 friction = 0.5
 bounce = 0.1
 
-[node name="Gear" type="RigidBody2D"]
+[node name="Gear" type="RigidBody2D" groups=["Box"]]
 physics_material_override = SubResource("PhysicsMaterial_51wjr")
+contact_monitor = true
+max_contacts_reported = 4
+script = ExtResource("1_vef3n")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 scale = Vector2(0.07, 0.07)
@@ -16,3 +20,5 @@ polygon = PackedVector2Array(-15, -104, 15, -104, 22, -79, 39, -72, 62, -84, 84,
 [node name="Sprite2D" type="Sprite2D" parent="." groups=["Box"]]
 scale = Vector2(0.07, 0.07)
 texture = ExtResource("1_7wims")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
