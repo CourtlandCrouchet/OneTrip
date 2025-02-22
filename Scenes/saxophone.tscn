@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://brf54mhp8l2xr"]
+
+[ext_resource type="Script" path="res://Scripts/saxophone.gd" id="1_3t5ev"]
+[ext_resource type="Texture2D" uid="uid://ddgg0arffc81r" path="res://Sprites/saxophone.png" id="1_rupq6"]
+
+[node name="Saxophone" type="RigidBody2D" groups=["Box"]]
+contact_monitor = true
+max_contacts_reported = 4
+script = ExtResource("1_3t5ev")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("1_rupq6")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.05, 0.05)
+polygon = PackedVector2Array(262, -199, 87, -223, -260, -28, -234, 190, -130, 232, -50, 195, 82, -173, 198, -166)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
