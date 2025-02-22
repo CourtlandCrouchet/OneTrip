@@ -26,6 +26,7 @@ offset_right = 389.0
 offset_bottom = 76.0
 
 [node name="LevelSelectorButton2" parent="LevelButtons" instance=ExtResource("1_rnnx0")]
+layout_mode = 0
 offset_left = 14.0
 offset_top = 108.0
 offset_right = 389.0
@@ -33,6 +34,7 @@ offset_bottom = 204.0
 text = "Level 2"
 
 [node name="LevelSelectorButton3" parent="LevelButtons" instance=ExtResource("1_rnnx0")]
+layout_mode = 0
 offset_left = 14.0
 offset_top = 228.0
 offset_right = 389.0
@@ -40,6 +42,7 @@ offset_bottom = 324.0
 text = "Level 3"
 
 [node name="LevelSelectorButton4" parent="LevelButtons" instance=ExtResource("1_rnnx0")]
+layout_mode = 0
 offset_left = 14.0
 offset_top = 356.0
 offset_right = 389.0
@@ -47,6 +50,7 @@ offset_bottom = 452.0
 text = "Level 4"
 
 [node name="LevelSelectorButton5" parent="LevelButtons" instance=ExtResource("1_rnnx0")]
+layout_mode = 0
 offset_left = 14.0
 offset_top = 484.0
 offset_right = 389.0
