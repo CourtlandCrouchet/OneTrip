@@ -21,7 +21,6 @@ func _process(delta: float) -> void:
 	pass
 
 func load_level_stacking(level_name: String):
-	print("Loading Level: ", level_name)
 	if get_child_count() > 0 and get_children()[0].name == "Level":
 		$Stacking.free
 		remove_child($Level)
@@ -43,7 +42,6 @@ func load_level_stacking(level_name: String):
 	for marker in $Stacking/Items.get_children():
 		if marker.get_child_count() > 0:
 			var item = marker.get_children()[0]
-			print(item)
 			marker.remove_child(item)
 			marker.get_parent().add_child(item)
 		$Stacking/Items.remove_child(marker)
@@ -54,7 +52,6 @@ func load_level_stacking(level_name: String):
 	$Stacking/StartButton.connect("button_up", _on_start_button_button_up)
 
 func _on_start_button_button_up() -> void:
-	print("pressed go button!")
 	# get the cargo locations
 	for child in $Stacking/Items.get_children():
 		cargo_locations.append(child.position)
