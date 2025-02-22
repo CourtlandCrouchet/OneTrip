@@ -71,13 +71,13 @@ position = Vector2(0, 22)
 position = Vector2(155, 37)
 
 [node name="Bumps" parent="." instance=ExtResource("15_3lrpl")]
-position = Vector2(103, 22)
+position = Vector2(105, 23)
 
 [node name="Bumps2" parent="." instance=ExtResource("15_3lrpl")]
-position = Vector2(157, 22)
+position = Vector2(154, 23)
 
 [node name="Bumps3" parent="." instance=ExtResource("15_3lrpl")]
-position = Vector2(130, 22)
+position = Vector2(130, 23)
 
 [node name="BoxController" type="Node2D" parent="."]
 
