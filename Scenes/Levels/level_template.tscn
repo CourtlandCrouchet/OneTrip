@@ -13,7 +13,7 @@
 font = ExtResource("9_qo3ek")
 font_size = 130
 
-[node name="Main" type="Node2D"]
+[node name="Level" type="Node2D"]
 script = ExtResource("1_37wli")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
