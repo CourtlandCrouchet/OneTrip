@@ -1,12 +1,17 @@
-[gd_scene load_steps=12 format=3 uid="uid://dnv2fuc6175qd"]
+[gd_scene load_steps=17 format=3 uid="uid://dnv2fuc6175qd"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_a4636"]
 [ext_resource type="PackedScene" uid="uid://b0lcnp5xrh7j6" path="res://Scenes/player.tscn" id="2_1okup"]
 [ext_resource type="PackedScene" uid="uid://dqsnvsllgrjvm" path="res://Scenes/floor.tscn" id="3_pjymg"]
 [ext_resource type="Texture2D" uid="uid://bja71htojt2j2" path="res://Sprites/warehouse.jpg" id="3_t0i2j"]
 [ext_resource type="PackedScene" uid="uid://b8u2n0yy3m32h" path="res://Scenes/hill.tscn" id="4_blmfu"]
+[ext_resource type="PackedScene" uid="uid://3i63mmp1u53b" path="res://Scenes/box.tscn" id="6_i8rqr"]
+[ext_resource type="PackedScene" uid="uid://uxyllyjuyq62" path="res://Scenes/bird_cage.tscn" id="7_3dhxh"]
 [ext_resource type="PackedScene" path="res://Scenes/WinZone.tscn" id="7_w60xq"]
+[ext_resource type="PackedScene" uid="uid://cdue0qa0ddfa7" path="res://Scenes/gear.tscn" id="8_u5b60"]
 [ext_resource type="Script" path="res://Scripts/win_zone.gd" id="9_jhthv"]
+[ext_resource type="PackedScene" uid="uid://cdpgvnmv8rbn4" path="res://Scenes/cheese.tscn" id="9_mnvd3"]
+[ext_resource type="PackedScene" uid="uid://brf54mhp8l2xr" path="res://Scenes/saxophone.tscn" id="10_8e10y"]
 [ext_resource type="PackedScene" uid="uid://qlsgq5vkwxfy" path="res://Scenes/hud.tscn" id="10_83cwo"]
 [ext_resource type="FontFile" uid="uid://cuq5ou13j84cx" path="res://Fonts/RubikMonoOne-Regular.ttf" id="10_bif06"]
 [ext_resource type="PackedScene" uid="uid://dsjsji6pel00q" path="res://Scenes/bumps.tscn" id="15_3lrpl"]
@@ -71,6 +76,21 @@ position = Vector2(0, 22)
 position = Vector2(261, 54)
 
 [node name="Cargo" type="Node2D" parent="."]
+
+[node name="Box" parent="Cargo" instance=ExtResource("6_i8rqr")]
+position = Vector2(110, 6)
+
+[node name="BirdCage" parent="Cargo" instance=ExtResource("7_3dhxh")]
+position = Vector2(124, 3)
+
+[node name="Gear" parent="Cargo" instance=ExtResource("8_u5b60")]
+position = Vector2(109, -5)
+
+[node name="Cheese" parent="Cargo" instance=ExtResource("9_mnvd3")]
+position = Vector2(72, 4)
+
+[node name="Saxophone" parent="Cargo" instance=ExtResource("10_8e10y")]
+position = Vector2(63, -1)
 
 [node name="WinZone" parent="." instance=ExtResource("7_w60xq")]
 position = Vector2(509, 21)
