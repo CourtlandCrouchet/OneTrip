@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-var movement_force = 5000 # Driving Torque
+var movement_force = 10000 # Driving Torque
 const MAX_SPEED = 100 # Speed Limit
 
 # Forklift Arm Constants
