@@ -1,32 +1,49 @@
 extends RigidBody2D
 
-var movement_force = 1000
+var movement_force = 5000 # Driving Torque
+const MAX_SPEED = 100 # Speed Limit
+
+# Forklift Arm Constants
 const MIN_ANGLE = deg_to_rad(-4)
 const MAX_ANGLE = deg_to_rad(-2)
 const P_GAIN = 500000.0
 const D_GAIN = 50.0
 const PLAYER_TORQUE = 7000
-var arm
 var previous_error = 0.0
+
+# Forklift Component Nodes
+var arm
+var wheel1
+var wheel2
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	arm = $Arm
-	pass # Replace with function body.
-
+	wheel1 = $"Wheel 1"
+	wheel2 = $"Wheel 2"
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
 
+func _integrate_forces(state) -> void:
+	var velocity = state.get_linear_velocity()
+	if velocity.length() > MAX_SPEED:
+		velocity = velocity.normalized() * MAX_SPEED
+		state.set_linear_velocity(velocity)
+
 func _physics_process(delta):
 	var input = Vector2.ZERO
-	if Input.is_action_pressed("move_left"):
-		input.x -= 1
 	if Input.is_action_pressed("move_right"):
-		input.x += 1
+		#input.x += 1
+		wheel1.apply_torque(movement_force)
+		wheel2.apply_torque(movement_force)
+	if Input.is_action_pressed("move_left"):
+		#input.x -= 1
+		wheel1.apply_torque(-movement_force)
+		wheel2.apply_torque(-movement_force)
 	
-	apply_force(input.normalized() * movement_force)
+	#apply_force(input.normalized() * movement_force)
 	
 	if Input.is_action_pressed("rotate_left"):
 		arm.apply_torque(-PLAYER_TORQUE)  # Rotate left

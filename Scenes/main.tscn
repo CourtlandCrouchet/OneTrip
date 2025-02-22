@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dnv2fuc6175qd"]
+[gd_scene load_steps=17 format=3 uid="uid://dnv2fuc6175qd"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_a4636"]
 [ext_resource type="PackedScene" uid="uid://b0lcnp5xrh7j6" path="res://Scenes/player.tscn" id="2_1okup"]
@@ -14,6 +14,7 @@
 [ext_resource type="FontFile" uid="uid://cuq5ou13j84cx" path="res://Fonts/RubikMonoOne-Regular.ttf" id="10_bif06"]
 [ext_resource type="PackedScene" uid="uid://cdpgvnmv8rbn4" path="res://Scenes/cheese.tscn" id="10_jqenh"]
 [ext_resource type="PackedScene" uid="uid://brf54mhp8l2xr" path="res://Scenes/saxophone.tscn" id="11_nl0le"]
+[ext_resource type="PackedScene" uid="uid://dsjsji6pel00q" path="res://Scenes/bumps.tscn" id="15_3lrpl"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_67nlv"]
 font = ExtResource("10_bif06")
@@ -74,6 +75,9 @@ position = Vector2(0, 22)
 [node name="Hill" parent="." instance=ExtResource("4_blmfu")]
 position = Vector2(81, 38)
 
+[node name="Bumps" parent="." instance=ExtResource("15_3lrpl")]
+position = Vector2(80, 22)
+
 [node name="BoxController" type="Node2D" parent="."]
 
 [node name="Box3" parent="BoxController" instance=ExtResource("3_nybnc")]
@@ -88,15 +92,6 @@ position = Vector2(81, -2)
 [node name="Spring" parent="BoxController" instance=ExtResource("7_onygg")]
 position = Vector2(36, 3)
 
-[node name="Spring2" parent="BoxController" instance=ExtResource("7_onygg")]
-position = Vector2(33, -13)
-
-[node name="Spring3" parent="BoxController" instance=ExtResource("7_onygg")]
-position = Vector2(87, 14)
-
-[node name="Spring4" parent="BoxController" instance=ExtResource("7_onygg")]
-position = Vector2(100, 8)
-
 [node name="BirdCage" parent="BoxController" instance=ExtResource("8_fsd2a")]
 position = Vector2(128, 12)
 
@@ -105,9 +100,6 @@ position = Vector2(102, -35)
 
 [node name="Cheese" parent="BoxController" instance=ExtResource("10_jqenh")]
 position = Vector2(48, 0)
-
-[node name="Cheese2" parent="BoxController" instance=ExtResource("10_jqenh")]
-position = Vector2(42, -27)
 
 [node name="Saxophone" parent="BoxController" instance=ExtResource("11_nl0le")]
 position = Vector2(76, -27)
