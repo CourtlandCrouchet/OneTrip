@@ -1,0 +1,68 @@
+[gd_scene load_steps=7 format=3 uid="uid://ceookfhl0fxbq"]
+
+[ext_resource type="PackedScene" uid="uid://b6d480ncgv8n4" path="res://Scenes/Levels/level_template.tscn" id="1_k2ks8"]
+[ext_resource type="PackedScene" uid="uid://brf54mhp8l2xr" path="res://Scenes/saxophone.tscn" id="3_iphp3"]
+[ext_resource type="PackedScene" uid="uid://cdue0qa0ddfa7" path="res://Scenes/gear.tscn" id="4_6agm5"]
+[ext_resource type="PackedScene" uid="uid://b8u2n0yy3m32h" path="res://Scenes/hill.tscn" id="5_hl0nk"]
+[ext_resource type="PackedScene" uid="uid://3i63mmp1u53b" path="res://Scenes/box.tscn" id="6_snm56"]
+[ext_resource type="PackedScene" uid="uid://dsjsji6pel00q" path="res://Scenes/bumps.tscn" id="10_5crrd"]
+
+[node name="Level" instance=ExtResource("1_k2ks8")]
+
+[node name="MileMarkers" parent="." index="1"]
+position = Vector2(-4, 1)
+metadata/_edit_group_ = true
+
+[node name="Player" parent="." index="2"]
+position = Vector2(-212, 7)
+
+[node name="Floor" parent="." index="3"]
+position = Vector2(-250, 22)
+scale = Vector2(1.6, 1)
+
+[node name="Box" parent="BoxController" index="0" instance=ExtResource("6_snm56")]
+position = Vector2(-185, 1)
+
+[node name="Saxophone" parent="BoxController" index="1" instance=ExtResource("3_iphp3")]
+position = Vector2(-182, -21)
+
+[node name="Gear" parent="BoxController" index="2" instance=ExtResource("4_6agm5")]
+position = Vector2(-165, -8)
+
+[node name="Gear2" parent="BoxController" index="3" instance=ExtResource("4_6agm5")]
+position = Vector2(-183, -42)
+
+[node name="Box2" parent="BoxController" index="4" instance=ExtResource("6_snm56")]
+position = Vector2(-156, -31)
+
+[node name="WinZone" parent="." index="5"]
+position = Vector2(605, 21)
+
+[node name="Hill" parent="." index="6" instance=ExtResource("5_hl0nk")]
+position = Vector2(209, 14)
+
+[node name="BumpyPatch" type="Node2D" parent="." index="7"]
+position = Vector2(-149, 0)
+metadata/_edit_group_ = true
+
+[node name="Bumps" parent="BumpyPatch" index="0" instance=ExtResource("10_5crrd")]
+position = Vector2(105, 23)
+
+[node name="Bumps2" parent="BumpyPatch" index="1" instance=ExtResource("10_5crrd")]
+position = Vector2(154, 23)
+
+[node name="Bumps3" parent="BumpyPatch" index="2" instance=ExtResource("10_5crrd")]
+position = Vector2(130, 23)
+
+[node name="BumpyPatch2" type="Node2D" parent="." index="8"]
+position = Vector2(265, 0)
+metadata/_edit_group_ = true
+
+[node name="Bumps" parent="BumpyPatch2" index="0" instance=ExtResource("10_5crrd")]
+position = Vector2(105, 23)
+
+[node name="Bumps2" parent="BumpyPatch2" index="1" instance=ExtResource("10_5crrd")]
+position = Vector2(154, 23)
+
+[node name="Bumps3" parent="BumpyPatch2" index="2" instance=ExtResource("10_5crrd")]
+position = Vector2(130, 23)
