@@ -9,7 +9,7 @@ bounce = 0.8
 absorbent = true
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3kqoj"]
-size = Vector2(16, 16)
+size = Vector2(15, 15)
 
 [node name="Box" type="RigidBody2D" groups=["Box"]]
 mass = 0.1
@@ -21,10 +21,11 @@ angular_damp = 4.0
 script = ExtResource("1_6oxtg")
 
 [node name="Sprite2D" type="Sprite2D" parent="." groups=["Box"]]
-scale = Vector2(0.125, 0.125)
+scale = Vector2(0.08, 0.08)
 texture = ExtResource("1_i6bum")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Box"]]
+scale = Vector2(0.75, 0.75)
 shape = SubResource("RectangleShape2D_3kqoj")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
