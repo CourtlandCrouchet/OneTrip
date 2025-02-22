@@ -1,5 +1,6 @@
 extends Node2D
 
+var hacky_position_scaler = .125
 var cargo_locations: Array[Vector2]
 
 # Called when the node enters the scene tree for the first time.
@@ -27,7 +28,7 @@ func _on_start_button_button_up() -> void:
 		var box = load("res://Scenes/box.tscn")
 		var box_instance = box.instantiate()
 		level_instance.get_node("Player/Arm/ItemPlacementMarker").add_child(box_instance)
-		box_instance.position = box_position
+		box_instance.position = box_position * hacky_position_scaler
 		level_instance.get_node("Cargo").add_child(box_instance)
 	
 	add_child(level_instance)
