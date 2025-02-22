@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://uxyllyjuyq62"]
 
-[ext_resource type="Texture2D" path="res://Scripts/bird-cage.png" id="1_4wu0w"]
 [ext_resource type="Script" path="res://Scenes/bird_cage.gd" id="1_7iof2"]
+[ext_resource type="Texture2D" uid="uid://do081e3xoah7g" path="res://Sprites/bird-cage.png" id="2_w25wp"]
 
 [node name="BirdCage" type="RigidBody2D"]
 contact_monitor = true
@@ -10,7 +10,7 @@ script = ExtResource("1_7iof2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.035, 0.035)
-texture = ExtResource("1_4wu0w")
+texture = ExtResource("2_w25wp")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-6, 9, 6, 9, 6, -5, 4, -6, 2, -7, 2, -8, 1, -8, 0, -9, -1, -8, -2, -8, -2, -7, -4, -6, -6, -4)
