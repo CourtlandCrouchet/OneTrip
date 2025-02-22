@@ -1,18 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://b8u2n0yy3m32h"]
+[gd_scene load_steps=2 format=3 uid="uid://b8u2n0yy3m32h"]
 
-[sub_resource type="Gradient" id="Gradient_ccl3e"]
-offsets = PackedFloat32Array(0)
-colors = PackedColorArray(1, 0, 0, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_3tvkb"]
-gradient = SubResource("Gradient_ccl3e")
+[ext_resource type="Texture2D" uid="uid://d021r37gahg61" path="res://Sprites/hill.png" id="1_tbsk0"]
 
 [node name="Hill" type="StaticBody2D" groups=["Floor"]]
 collision_layer = 3
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." groups=["Floor"]]
-polygon = PackedVector2Array(0, 0, 135, -18, 167, 0)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.045, 0.045)
+polygon = PackedVector2Array(449.3, -226, -68.8999, -226, -158.5, -224, -193.5, -224, -385.6, -216, -408.6, -216, -806.6, -193, -821.6, -193, -1274.7, -157, -1286.6, -157, -1745.7, -112, -1755.6, -112, -2315.7, -48, -2324.6, -48, -2875.8, 23, -2883.6, 23, -3507.8, 111, -3514.7, 111, -4081.5, 196.9, -4081.5, 224, -1953.5, 226, 4079.5, 226, 4079.5, 223, 4081.5, 223, 4081.5, 195.9, 3780.5, 191, 3747.6, 191, 3470.6, 177, 3454.7, 177, 3175.6, 153, 3165.7, 153, 2914.6, 122, 2906.8, 122, 2702.7, 90, 2695.9, 90, 2503.7, 55, 2497.9, 55, 1880.5, -68.7, 1880.5, -69.7, 1659.5, -109.8, 1659.5, -110.7, 1371.5, -154.8, 1371.5, -155.8, 1159.5, -180.8, 1159.5, -181.8, 866.5, -206.9, 866.5, -207.9, 585.5, -222, 585.5, -223)
 
-[node name="Polygon2D" type="Polygon2D" parent="." groups=["Floor"]]
-texture = SubResource("GradientTexture1D_3tvkb")
-polygon = PackedVector2Array(0, 0, 135, -18, 167, 0)
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.045, 0.045)
+texture = ExtResource("1_tbsk0")

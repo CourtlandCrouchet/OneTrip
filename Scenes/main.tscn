@@ -68,16 +68,7 @@ editor_draw_drag_margin = true
 position = Vector2(0, 22)
 
 [node name="Hill" parent="." instance=ExtResource("4_blmfu")]
-position = Vector2(155, 37)
-
-[node name="Bumps" parent="." instance=ExtResource("15_3lrpl")]
-position = Vector2(105, 23)
-
-[node name="Bumps2" parent="." instance=ExtResource("15_3lrpl")]
-position = Vector2(154, 23)
-
-[node name="Bumps3" parent="." instance=ExtResource("15_3lrpl")]
-position = Vector2(130, 23)
+position = Vector2(236, 13)
 
 [node name="BoxController" type="Node2D" parent="."]
 
@@ -107,6 +98,19 @@ vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="Timer" type="Timer" parent="WinZone"]
+
+[node name="BumpyPatch" type="Node2D" parent="."]
+position = Vector2(215, 0)
+metadata/_edit_group_ = true
+
+[node name="Bumps" parent="BumpyPatch" instance=ExtResource("15_3lrpl")]
+position = Vector2(105, 23)
+
+[node name="Bumps2" parent="BumpyPatch" instance=ExtResource("15_3lrpl")]
+position = Vector2(154, 23)
+
+[node name="Bumps3" parent="BumpyPatch" instance=ExtResource("15_3lrpl")]
+position = Vector2(130, 23)
 
 [connection signal="body_entered" from="WinZone" to="WinZone" method="_on_body_entered"]
 [connection signal="timeout" from="WinZone/Timer" to="WinZone" method="_on_timer_timeout"]
