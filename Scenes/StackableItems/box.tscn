@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dltn48y8f0ucr"]
+
+[ext_resource type="Script" path="res://Scenes/stackable_item.gd" id="1_w6tr1"]
+[ext_resource type="Texture2D" uid="uid://bgveym5k01bch" path="res://Sprites/slice2.svg" id="2_wmltw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l0yuk"]
+size = Vector2(144, 144)
+
+[node name="Box" type="Area2D" groups=["StackItem"]]
+position = Vector2(352, -136)
+script = ExtResource("1_w6tr1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_wmltw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_l0yuk")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
+[connection signal="input_event" from="." to="." method="_on_input_event"]
