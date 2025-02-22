@@ -3,6 +3,9 @@ extends Area2D
 var is_dragging = false #state management
 var offset = Vector2(0,0)
 
+signal increase_overlaps
+signal decrease_overlaps
+
 func _process(_delta):
 	if is_dragging:
 		followMouse()
@@ -19,9 +22,9 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 			is_dragging = false
 
 func _on_area_entered(area: Area2D) -> void:
-	if area.is_in_group("StackItem") and owner.has_method("box_overlap"):
-		owner.box_overlap()
+	if area.is_in_group("StackItem"):
+		increase_overlaps.emit()
 	
 func _on_area_exited(area: Area2D) -> void:
-	if area.is_in_group("StackItem") and owner.has_method("box_not_overlap"):
-		owner.box_not_overlap()
+	if area.is_in_group("StackItem"):
+		decrease_overlaps.emit()

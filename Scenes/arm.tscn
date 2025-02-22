@@ -35,6 +35,9 @@ position = Vector2(14, 2)
 shape = SubResource("RectangleShape2D_mqrgc")
 
 [node name="HSprite2D" type="Sprite2D" parent="."]
-position = Vector2(14, 2)
-scale = Vector2(0.109375, 2.25)
+position = Vector2(16, 2)
+scale = Vector2(0.125, 2.25)
 texture = SubResource("GradientTexture1D_ksknm")
+
+[node name="ItemPlacementMarker" type="Marker2D" parent="."]
+position = Vector2(17, 2)
