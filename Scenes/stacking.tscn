@@ -1,13 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://yhey08vlerh"]
+[gd_scene load_steps=10 format=3 uid="uid://yhey08vlerh"]
 
-[ext_resource type="Script" path="res://Scenes/level_manager.gd" id="1_00l62"]
 [ext_resource type="Texture2D" uid="uid://d11wyl38w6tef" path="res://Sprites/Default.svg" id="1_34umx"]
 [ext_resource type="Script" path="res://Scenes/stacking.gd" id="1_vrwum"]
 [ext_resource type="Texture2D" uid="uid://3rbp3n36ucx6" path="res://Sprites/slice4.svg" id="2_bgq2l"]
 [ext_resource type="Texture2D" uid="uid://dbfkn3y6oj0ts" path="res://Sprites/slice1.svg" id="3_r7rb3"]
 [ext_resource type="LabelSettings" uid="uid://c3oujy4okpq24" path="res://Scenes/StackableItems/WhiteText.tres" id="5_guhdh"]
 [ext_resource type="LabelSettings" uid="uid://dmsdcl2ojmwvq" path="res://Scenes/StackableItems/RedText.tres" id="6_4m0nt"]
-[ext_resource type="PackedScene" uid="uid://dltn48y8f0ucr" path="res://Scenes/StackableItems/box.tscn" id="6_gf1jr"]
 [ext_resource type="FontFile" uid="uid://cuq5ou13j84cx" path="res://Fonts/RubikMonoOne-Regular.ttf" id="8_jdrxu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sf5wp"]
@@ -17,13 +15,10 @@ size = Vector2(288, 464)
 font = ExtResource("8_jdrxu")
 font_size = 36
 
-[node name="LevelManager" type="Node2D"]
-script = ExtResource("1_00l62")
-
-[node name="Stacking" type="Node2D" parent="."]
+[node name="Stacking" type="Node2D"]
 script = ExtResource("1_vrwum")
 
-[node name="OverlapWarning" type="Label" parent="Stacking"]
+[node name="OverlapWarning" type="Label" parent="."]
 visible = false
 offset_left = 120.0
 offset_top = -176.0
@@ -35,30 +30,30 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="Character" type="Node2D" parent="Stacking"]
+[node name="Character" type="Node2D" parent="."]
 position = Vector2(32, -20)
 
-[node name="Default" type="Sprite2D" parent="Stacking/Character"]
+[node name="Default" type="Sprite2D" parent="Character"]
 position = Vector2(-368, 144)
 texture = ExtResource("1_34umx")
 
-[node name="Slice4" type="Sprite2D" parent="Stacking/Character"]
+[node name="Slice4" type="Sprite2D" parent="Character"]
 position = Vector2(-72, 144)
 scale = Vector2(1.06448, 1)
 texture = ExtResource("2_bgq2l")
 
-[node name="Slice1" type="Sprite2D" parent="Stacking/Character"]
+[node name="Slice1" type="Sprite2D" parent="Character"]
 position = Vector2(-271.153, 299.764)
 texture = ExtResource("3_r7rb3")
 
-[node name="Slice2" type="Sprite2D" parent="Stacking/Character"]
+[node name="Slice2" type="Sprite2D" parent="Character"]
 position = Vector2(-459.764, 298.542)
 texture = ExtResource("3_r7rb3")
 
-[node name="StackZone" type="Area2D" parent="Stacking"]
+[node name="StackZone" type="Area2D" parent="."]
 position = Vector2(32, -20)
 
-[node name="Label" type="Label" parent="Stacking/StackZone"]
+[node name="Label" type="Label" parent="StackZone"]
 offset_left = -552.0
 offset_top = -320.0
 offset_right = -212.0
@@ -69,43 +64,52 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="Zone" type="Polygon2D" parent="Stacking/StackZone"]
+[node name="Zone" type="Polygon2D" parent="StackZone"]
 position = Vector2(-76.0561, 20)
 scale = Vector2(0.762789, 1)
 color = Color(1, 1, 1, 0.14902)
 polygon = PackedVector2Array(-152, -256, 224, -256, 224, 208, -152, 208)
 
-[node name="Arrow" type="Polygon2D" parent="Stacking/StackZone"]
+[node name="Arrow" type="Polygon2D" parent="StackZone"]
 position = Vector2(-304, 248)
 scale = Vector2(0.833333, 1)
 polygon = PackedVector2Array(-120, -424, -120, -296, 67.2, -296, 67.2, -272, 115.2, -312, 67.2, -360, 67.2, -328, -96, -312, -105.6, -424)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Stacking/StackZone"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StackZone"]
 position = Vector2(-48, -4)
 shape = SubResource("RectangleShape2D_sf5wp")
 
-[node name="Items" type="Node2D" parent="Stacking"]
+[node name="Items" type="Node2D" parent="."]
 position = Vector2(-24, 224)
 
-[node name="Box" parent="Stacking/Items" instance=ExtResource("6_gf1jr")]
-position = Vector2(368, -344)
+[node name="Location1" type="Marker2D" parent="Items"]
+position = Vector2(282, -414)
 
-[node name="Box2" parent="Stacking/Items" instance=ExtResource("6_gf1jr")]
-position = Vector2(488, -168)
+[node name="Location2" type="Marker2D" parent="Items"]
+position = Vector2(474, -414)
 
-[node name="Box3" parent="Stacking/Items" instance=ExtResource("6_gf1jr")]
-position = Vector2(312, -136)
+[node name="Location3" type="Marker2D" parent="Items"]
+position = Vector2(282, -222)
 
-[node name="Camera2D" type="Camera2D" parent="Stacking"]
+[node name="Location4" type="Marker2D" parent="Items"]
+position = Vector2(474, -222)
 
-[node name="StartButton" type="Button" parent="Stacking"]
+[node name="Location5" type="Marker2D" parent="Items"]
+position = Vector2(282, -30)
+
+[node name="Location6" type="Marker2D" parent="Items"]
+position = Vector2(474, -30)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="StartButton" type="Button" parent="."]
 visible = false
 offset_left = 226.0
 offset_top = -96.0
 offset_right = 482.0
 offset_bottom = 32.0
 
-[node name="Label" type="Label" parent="Stacking/StartButton"]
+[node name="Label" type="Label" parent="StartButton"]
 layout_mode = 0
 offset_right = 254.0
 offset_bottom = 128.0
@@ -114,6 +118,5 @@ label_settings = SubResource("LabelSettings_swktc")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="area_entered" from="Stacking/StackZone" to="Stacking" method="_on_stack_zone_area_entered"]
-[connection signal="area_exited" from="Stacking/StackZone" to="Stacking" method="_on_stack_zone_area_exited"]
-[connection signal="button_up" from="Stacking/StartButton" to="." method="_on_start_button_button_up"]
+[connection signal="area_entered" from="StackZone" to="." method="_on_stack_zone_area_entered"]
+[connection signal="area_exited" from="StackZone" to="." method="_on_stack_zone_area_exited"]

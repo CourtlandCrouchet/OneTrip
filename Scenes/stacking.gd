@@ -7,8 +7,14 @@ var items_overlapping = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	pass
+
+func set_up_items(): 
+	print("setting up items")
 	total_item_count = $Items.get_child_count()
+	print("total item count: ", total_item_count)
 	for child in $Items.get_children():
+		print(child.position)
 		child.connect("increase_overlaps", _box_overlap)
 		child.connect("decrease_overlaps", _box_not_overlap)
 
