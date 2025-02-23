@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://b0lcnp5xrh7j6"]
+[gd_scene load_steps=12 format=3 uid="uid://b0lcnp5xrh7j6"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_n61yp"]
 [ext_resource type="PackedScene" uid="uid://1363gqqom0hw" path="res://Scenes/arm.tscn" id="2_ihkd7"]
 [ext_resource type="Texture2D" uid="uid://dbfkn3y6oj0ts" path="res://Sprites/slice1.svg" id="3_q6n6w"]
 [ext_resource type="Texture2D" uid="uid://d11wyl38w6tef" path="res://Sprites/Default.svg" id="4_k02vq"]
+[ext_resource type="Texture2D" uid="uid://b6q38yyfpanc2" path="res://Sprites/Blinking.svg" id="5_df3cv"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_7qnxl"]
 absorbent = true
@@ -19,6 +20,53 @@ radius = 3.0
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kibed"]
 absorbent = true
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4g5iq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_k02vq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_k02vq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_k02vq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_df3cv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_k02vq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_k02vq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_k02vq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_k02vq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_k02vq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_k02vq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_k02vq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_k02vq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_k02vq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
 
 [node name="Player" type="RigidBody2D" groups=["Player"]]
 physics_material_override = SubResource("PhysicsMaterial_7qnxl")
@@ -74,7 +122,7 @@ node_b = NodePath("..")
 angular_limit_lower = -0.261799
 angular_limit_upper = -0.174533
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0.240001, 0.4)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.06, 0.06)
-texture = ExtResource("4_k02vq")
+sprite_frames = SubResource("SpriteFrames_4g5iq")
+frame_progress = 0.0140364

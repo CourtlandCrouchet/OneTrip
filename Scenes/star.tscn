@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://b77o5k7ht701v"]
+[gd_scene load_steps=4 format=3 uid="uid://b77o5k7ht701v"]
 
 [ext_resource type="Texture2D" uid="uid://b6ltbaeh43tj8" path="res://Sprites/star.png" id="1_4umjp"]
+[ext_resource type="Script" path="res://Scripts/saxophone.gd" id="1_sxvse"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_h2fiv"]
 friction = 0.5
@@ -10,6 +11,7 @@ bounce = 0.8
 scale = Vector2(-1, 1)
 mass = 0.1
 physics_material_override = SubResource("PhysicsMaterial_h2fiv")
+script = ExtResource("1_sxvse")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, 0.538454)
