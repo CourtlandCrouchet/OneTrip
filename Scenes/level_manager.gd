@@ -18,7 +18,7 @@ var level_cargo_sets = {
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	load_level_stacking(current_level)
+	load_level_select()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -27,7 +27,7 @@ func _process(delta: float) -> void:
 
 func load_level_stacking(level_name: String):
 	if get_child_count() > 0 and get_children()[0].name == "Level":
-		$Stacking.free
+		$Level.free
 		remove_child($Level)
 		
 	var stacking_scene = load("res://Scenes/stacking.tscn")
@@ -97,3 +97,42 @@ func _on_start_button_button_up() -> void:
 			box_instance.reparent(level_instance.get_node("BoxController"))
 	
 	add_child(level_instance)
+	
+	$Level/HUD/Node/LevelSelectorRedirect.connect("button_up", load_level_select)
+
+func load_level_select():
+	# unload whatever scene might already be loaded
+	if get_child_count() > 0 and get_children()[0].name == "Level":
+		$Level.free
+		remove_child($Level)
+	if get_child_count() > 0 and get_children()[0].name == "Stacking":
+		$Stacking.free
+		remove_child($Stacking)
+
+	# load in level select
+	var level_select_scene = load("res://Scenes/level_selector.tscn")
+	var level_select_instance = level_select_scene.instantiate()
+	add_child(level_select_instance)
+	
+	var i = 1
+	for button in $LevelSelector/LevelButtons.get_children():
+		button.connect("button_up", load_level_wrapper.bind(i))
+		i += 1
+
+func load_level_wrapper(scene_number: int):
+	$LevelSelector.free
+	remove_child($LevelSelector)
+	
+	match scene_number:
+		1:
+			current_level = "LevelOne"
+		2:
+			current_level = "LevelTwo"
+		3:
+			current_level = "LevelThree"
+		4:
+			current_level = "LevelFour"
+		5:
+			current_level = "LevelFive"
+			
+	load_level_stacking(current_level)
