@@ -125,4 +125,4 @@ angular_limit_upper = -0.174533
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.06, 0.06)
 sprite_frames = SubResource("SpriteFrames_4g5iq")
-frame_progress = 0.616957
+frame_progress = 0.0140364
