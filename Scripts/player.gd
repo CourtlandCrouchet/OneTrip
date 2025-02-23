@@ -21,6 +21,7 @@ func _ready():
 	arm = $Arm
 	wheel1 = $"Wheel 1"
 	wheel2 = $"Wheel 2"
+	$AnimatedSprite2D.play("default")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
