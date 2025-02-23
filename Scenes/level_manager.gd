@@ -1,6 +1,6 @@
 extends Node2D
 
-var hacky_position_scaler = .05
+var hacky_position_scaler = .085
 var cargo_locations: Array[Array]
 
 var box_scene: PackedScene = preload("res://Scenes/StackableItems/box.tscn")
@@ -57,6 +57,9 @@ func _on_start_button_button_up() -> void:
 	$Stacking.free
 	remove_child($Stacking)
 	
+	load_level_terrain()
+
+func load_level_terrain():
 	var level = ""
 	
 	match current_level:
@@ -99,6 +102,7 @@ func _on_start_button_button_up() -> void:
 	add_child(level_instance)
 	
 	$Level/HUD/Node/LevelSelectorRedirect.connect("button_up", load_level_select)
+	$Level/HUD/Node/RestartButton.connect("button_up", reload_level)
 
 func load_level_select():
 	# unload whatever scene might already be loaded
@@ -136,3 +140,8 @@ func load_level_wrapper(scene_number: int):
 			current_level = "LevelFive"
 			
 	load_level_stacking(current_level)
+
+func reload_level():
+	$Level.free
+	remove_child($Level)
+	load_level_terrain()
