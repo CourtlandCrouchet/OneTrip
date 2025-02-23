@@ -82,24 +82,6 @@ shape = SubResource("RectangleShape2D_sf5wp")
 [node name="Items" type="Node2D" parent="."]
 position = Vector2(-24, 224)
 
-[node name="Location1" type="Marker2D" parent="Items"]
-position = Vector2(282, -414)
-
-[node name="Location2" type="Marker2D" parent="Items"]
-position = Vector2(474, -414)
-
-[node name="Location3" type="Marker2D" parent="Items"]
-position = Vector2(282, -222)
-
-[node name="Location4" type="Marker2D" parent="Items"]
-position = Vector2(474, -222)
-
-[node name="Location5" type="Marker2D" parent="Items"]
-position = Vector2(282, -30)
-
-[node name="Location6" type="Marker2D" parent="Items"]
-position = Vector2(474, -30)
-
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="StartButton" type="Button" parent="."]
@@ -117,6 +99,26 @@ text = "Go!"
 label_settings = SubResource("LabelSettings_swktc")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Locations" type="Node2D" parent="."]
+
+[node name="Location1" type="Marker2D" parent="Locations"]
+position = Vector2(258, -190)
+
+[node name="Location2" type="Marker2D" parent="Locations"]
+position = Vector2(450, -190)
+
+[node name="Location3" type="Marker2D" parent="Locations"]
+position = Vector2(258, 2)
+
+[node name="Location4" type="Marker2D" parent="Locations"]
+position = Vector2(450, 2)
+
+[node name="Location5" type="Marker2D" parent="Locations"]
+position = Vector2(258, 194)
+
+[node name="Location6" type="Marker2D" parent="Locations"]
+position = Vector2(450, 194)
 
 [connection signal="area_entered" from="StackZone" to="." method="_on_stack_zone_area_entered"]
 [connection signal="area_exited" from="StackZone" to="." method="_on_stack_zone_area_exited"]

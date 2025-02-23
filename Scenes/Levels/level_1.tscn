@@ -1,15 +1,5 @@
-[gd_scene load_steps=3 format=3 uid="uid://c7j33tnm0pdv6"]
+[gd_scene load_steps=2 format=3 uid="uid://c7j33tnm0pdv6"]
 
 [ext_resource type="PackedScene" uid="uid://b6d480ncgv8n4" path="res://Scenes/Levels/level_template.tscn" id="1_2tgin"]
-[ext_resource type="PackedScene" uid="uid://3i63mmp1u53b" path="res://Scenes/box.tscn" id="2_xm4cw"]
 
 [node name="Level" instance=ExtResource("1_2tgin")]
-
-[node name="Box" parent="BoxController" index="0" instance=ExtResource("2_xm4cw")]
-position = Vector2(44, -35)
-
-[node name="Box2" parent="BoxController" index="1" instance=ExtResource("2_xm4cw")]
-position = Vector2(44, -17)
-
-[node name="Box3" parent="BoxController" index="2" instance=ExtResource("2_xm4cw")]
-position = Vector2(44, 1)

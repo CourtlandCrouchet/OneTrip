@@ -6,6 +6,8 @@ var offset = Vector2(0,0)
 signal increase_overlaps
 signal decrease_overlaps
 
+@export var cargo_type: String = ""
+
 func _process(_delta):
 	if is_dragging:
 		followMouse()

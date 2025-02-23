@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://5nnlasem1epb"]
+
+[ext_resource type="Script" path="res://Scenes/stackable_item.gd" id="1_27vhi"]
+[ext_resource type="Texture2D" uid="uid://ddy0gtu4kjbws" path="res://Sprites/cheese.png" id="2_j1mgj"]
+
+[node name="Gear" type="Area2D" groups=["StackItem"]]
+scale = Vector2(0.65, 0.65)
+script = ExtResource("1_27vhi")
+cargo_type = "Cheese"
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_j1mgj")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.4, 0.4)
+polygon = PackedVector2Array(39.2, -284, -32.7, -284, -39.3, -283, -43.7, -283, -54.7, -275, -56.3, -275, -98.2, -184, -99.4, -184, -103, -174.4, -103, -161.2, -89, -146.2, -89, -129.9, -101, -116.8, -112, -111.3, -122.3, -109, -126, -109, -129, -105, -130.4, -105, -145, -64.3, -145, -60.6, -179.4, 24, -180.4, 24, -200.4, 81, -202.8, 81, -201, 86.3, -201, 89.8, -189.9, 102, -189, 120.1, -189, 122.3, -197, 132.3, -211.5, 140, -213.9, 140, -218.9, 146, -220.1, 146, -237, 173.1, -237, 192.9, -209, 222.8, -209, 224, -163, 255.9, -163, 257.3, -125, 273.2, -125, 274.6, -79, 284, 24.1, 284, 54.3, 280, 62.2, 280, 103.1, 270, 107.3, 270, 146.3, 257, 149.5, 257, 185.5, 239, 187.7, 239, 213.7, 220, 215.9, 220, 236.8, 198, 237, 170.3, 228, 146.5, 228, 143.6, 172, 11.6, 172, 9.20001, 162, -0.799988, 162, -3.39999, 153.7, -2, 145.6, -2, 139.6, -6, 138.1, -6, 133.1, -14, 134, -24.9, 134, -27.6, 145, -46.5, 145, -54.5, 136.2, -72, 135.3, -72, 55, -266.4, 55, -268.8, 44, -280.9, 44, -282.4)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
+[connection signal="input_event" from="." to="." method="_on_input_event"]
