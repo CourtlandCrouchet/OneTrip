@@ -17,4 +17,4 @@ func _on_timer_timeout() -> void:
 	end_level_timer -= 1
 	$Label.text = str(end_level_timer)
 	if end_level_timer <= -1:
-		$Label.text = "Boxes Collected: " + str(box_count)
+		$Label.text = "Cargo Collected: " + str(box_count)

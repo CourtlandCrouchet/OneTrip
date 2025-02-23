@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://rbwsbkjvsbn3"]
+[gd_scene load_steps=4 format=3 uid="uid://rbwsbkjvsbn3"]
 
 [ext_resource type="PackedScene" uid="uid://b6d480ncgv8n4" path="res://Scenes/Levels/level_template.tscn" id="1_v51p7"]
 [ext_resource type="PackedScene" uid="uid://dqsnvsllgrjvm" path="res://Scenes/floor.tscn" id="2_3fqw4"]
 [ext_resource type="PackedScene" uid="uid://dsjsji6pel00q" path="res://Scenes/bumps.tscn" id="3_0e0j5"]
-[ext_resource type="PackedScene" uid="uid://3i63mmp1u53b" path="res://Scenes/box.tscn" id="3_p17gj"]
 
 [node name="Level" instance=ExtResource("1_v51p7")]
 
@@ -31,15 +30,6 @@ position = Vector2(-200, 16)
 [node name="Floor2" parent="." index="4" instance=ExtResource("2_3fqw4")]
 position = Vector2(303, 28)
 scale = Vector2(0.45, 1)
-
-[node name="Box" parent="BoxController" index="0" instance=ExtResource("3_p17gj")]
-position = Vector2(-136, -48)
-
-[node name="Box2" parent="BoxController" index="1" instance=ExtResource("3_p17gj")]
-position = Vector2(-138, -31)
-
-[node name="Box3" parent="BoxController" index="2" instance=ExtResource("3_p17gj")]
-position = Vector2(-138, -13)
 
 [node name="WinZone" parent="." index="6"]
 position = Vector2(496, 27)

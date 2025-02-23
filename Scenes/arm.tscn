@@ -40,4 +40,4 @@ scale = Vector2(0.125, 2.25)
 texture = SubResource("GradientTexture1D_ksknm")
 
 [node name="ItemPlacementMarker" type="Marker2D" parent="."]
-position = Vector2(17, 2)
+position = Vector2(11.8224, 2)

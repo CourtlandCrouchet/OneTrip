@@ -7,6 +7,7 @@ var box_scene: PackedScene = preload("res://Scenes/StackableItems/box.tscn")
 var gear_scene: PackedScene = preload("res://Scenes/StackableItems/gear.tscn")
 var cheese_scene: PackedScene = preload("res://Scenes/StackableItems/cheese.tscn")
 var birdcage_scene: PackedScene = preload("res://Scenes/StackableItems/birdcage.tscn")
+var saxophone_scene: PackedScene = preload("res://Scenes/StackableItems/saxophone.tscn")
 
 var current_level = "LevelThree"
 
@@ -14,6 +15,8 @@ var level_cargo_sets = {
 	"LevelOne": [box_scene, box_scene, box_scene],
 	"LevelTwo": [box_scene, box_scene, gear_scene, gear_scene, gear_scene],
 	"LevelThree": [box_scene, box_scene, cheese_scene, cheese_scene, birdcage_scene],
+	"LevelFour": [box_scene, box_scene, gear_scene, gear_scene, saxophone_scene],
+	"LevelFive": [box_scene, box_scene, box_scene],
 }
 
 # Called when the node enters the scene tree for the first time.
@@ -91,6 +94,8 @@ func load_level_terrain():
 				item_scene = load("res://Scenes/cheese.tscn")
 			"Birdcage":
 				item_scene = load("res://Scenes/bird_cage.tscn")
+			"Saxophone":
+				item_scene = load("res://Scenes/saxophone.tscn")
 				
 		if item_scene:
 			var box_instance = item_scene.instantiate()
@@ -103,8 +108,10 @@ func load_level_terrain():
 	
 	$Level/HUD/Node/LevelSelectorRedirect.connect("button_up", load_level_select)
 	$Level/HUD/Node/RestartButton.connect("button_up", reload_level)
+	$Level/HUD/Node/RestackButton.connect("button_up", return_to_stacking)
 
 func load_level_select():
+	cargo_locations = []
 	# unload whatever scene might already be loaded
 	if get_child_count() > 0 and get_children()[0].name == "Level":
 		$Level.free
@@ -139,6 +146,13 @@ func load_level_wrapper(scene_number: int):
 		5:
 			current_level = "LevelFive"
 			
+	cargo_locations = []
+	load_level_stacking(current_level)
+
+func return_to_stacking():
+	cargo_locations = []
+	$Level.free
+	remove_child($Level)
 	load_level_stacking(current_level)
 
 func reload_level():
