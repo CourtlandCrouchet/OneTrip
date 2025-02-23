@@ -1,26 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dbox581kugm85"]
+[gd_scene load_steps=3 format=3 uid="uid://dbox581kugm85"]
 
 [ext_resource type="PackedScene" uid="uid://b6d480ncgv8n4" path="res://Scenes/Levels/level_template.tscn" id="1_6c5ei"]
-[ext_resource type="PackedScene" uid="uid://cdue0qa0ddfa7" path="res://Scenes/gear.tscn" id="3_eg85p"]
 [ext_resource type="PackedScene" uid="uid://b8u2n0yy3m32h" path="res://Scenes/hill.tscn" id="5_lfa2j"]
-[ext_resource type="PackedScene" uid="uid://3i63mmp1u53b" path="res://Scenes/box.tscn" id="6_rly4j"]
 
 [node name="Level" instance=ExtResource("1_6c5ei")]
-
-[node name="Box" parent="BoxController" index="0" instance=ExtResource("6_rly4j")]
-position = Vector2(42, 3)
-
-[node name="Gear" parent="BoxController" index="1" instance=ExtResource("3_eg85p")]
-position = Vector2(39, -50)
-
-[node name="Gear2" parent="BoxController" index="2" instance=ExtResource("3_eg85p")]
-position = Vector2(41, -35)
-
-[node name="Box2" parent="BoxController" index="3" instance=ExtResource("6_rly4j")]
-position = Vector2(42, -17)
-
-[node name="Gear3" parent="BoxController" index="4" instance=ExtResource("3_eg85p")]
-position = Vector2(39, -67)
 
 [node name="Hill" parent="." index="6" instance=ExtResource("5_lfa2j")]
 position = Vector2(256, 13)

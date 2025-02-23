@@ -1,27 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://5xxuyntglfjm"]
+[gd_scene load_steps=3 format=3 uid="uid://5xxuyntglfjm"]
 
 [ext_resource type="PackedScene" uid="uid://b6d480ncgv8n4" path="res://Scenes/Levels/level_template.tscn" id="1_kvtmy"]
-[ext_resource type="PackedScene" uid="uid://uxyllyjuyq62" path="res://Scenes/bird_cage.tscn" id="3_ss8mr"]
-[ext_resource type="PackedScene" uid="uid://cdpgvnmv8rbn4" path="res://Scenes/cheese.tscn" id="4_ywqfi"]
-[ext_resource type="PackedScene" uid="uid://3i63mmp1u53b" path="res://Scenes/box.tscn" id="6_lhj41"]
-[ext_resource type="PackedScene" uid="uid://dsjsji6pel00q" path="res://Scenes/bumps.tscn" id="10_prxe7"]
+[ext_resource type="PackedScene" path="res://Scenes/bumps.tscn" id="10_prxe7"]
 
 [node name="Level" instance=ExtResource("1_kvtmy")]
-
-[node name="Box" parent="BoxController" index="0" instance=ExtResource("6_lhj41")]
-position = Vector2(44, 1)
-
-[node name="BirdCage" parent="BoxController" index="1" instance=ExtResource("3_ss8mr")]
-position = Vector2(50, -24)
-
-[node name="Cheese" parent="BoxController" index="2" instance=ExtResource("4_ywqfi")]
-position = Vector2(37, -37)
-
-[node name="Cheese2" parent="BoxController" index="3" instance=ExtResource("4_ywqfi")]
-position = Vector2(37, -17)
-
-[node name="Box2" parent="BoxController" index="4" instance=ExtResource("6_lhj41")]
-position = Vector2(51, -48)
 
 [node name="BumpyPatch" type="Node2D" parent="." index="6"]
 position = Vector2(215, 0)

@@ -1,19 +1,24 @@
 extends Node2D
 
-var hacky_position_scaler = .125
-var cargo_locations: Array[Vector2]
+var hacky_position_scaler = .05
+var cargo_locations: Array[Array]
 
-var box_scene = preload("res://Scenes/StackableItems/box.tscn")
+var box_scene: PackedScene = preload("res://Scenes/StackableItems/box.tscn")
+var gear_scene: PackedScene = preload("res://Scenes/StackableItems/gear.tscn")
+var cheese_scene: PackedScene = preload("res://Scenes/StackableItems/cheese.tscn")
+var birdcage_scene: PackedScene = preload("res://Scenes/StackableItems/birdcage.tscn")
 
-var current_level = "LevelOne"
+var current_level = "LevelThree"
 
 var level_cargo_sets = {
 	"LevelOne": [box_scene, box_scene, box_scene],
+	"LevelTwo": [box_scene, box_scene, gear_scene, gear_scene, gear_scene],
+	"LevelThree": [box_scene, box_scene, cheese_scene, cheese_scene, birdcage_scene],
 }
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	load_level_stacking("LevelOne")
+	load_level_stacking(current_level)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -29,23 +34,14 @@ func load_level_stacking(level_name: String):
 	var stacking_instance = stacking_scene.instantiate()
 	add_child(stacking_instance)
 	
-	var potential_item_spawns = $Stacking/Items.get_children()
+	var potential_item_spawns = $Stacking/Locations.get_children()
 	
 	var i = 0
 	for item in level_cargo_sets[level_name]:
 		var item_instance = item.instantiate()
-		potential_item_spawns[i].add_child(item_instance)
-		item_instance.position = potential_item_spawns[i].position
+		$Stacking/Items.add_child(item_instance)
+		item_instance.global_position = potential_item_spawns[i].global_position
 		i += 1
-		
-	# remove spawn location markers
-	for marker in $Stacking/Items.get_children():
-		if marker.get_child_count() > 0:
-			var item = marker.get_children()[0]
-			marker.remove_child(item)
-			marker.get_parent().add_child(item)
-		$Stacking/Items.remove_child(marker)
-		marker.free
 	
 	$Stacking.set_up_items()
 	
@@ -54,20 +50,50 @@ func load_level_stacking(level_name: String):
 func _on_start_button_button_up() -> void:
 	# get the cargo locations
 	for child in $Stacking/Items.get_children():
-		cargo_locations.append(child.position)
+		print("item name: ", child.cargo_type)
+		cargo_locations.append([child.cargo_type, child.position])
 	
 	# swap out the scenes
 	$Stacking.free
 	remove_child($Stacking)
-	var level_one = load("res://Scenes/main.tscn")
-	var level_instance = level_one.instantiate()
+	
+	var level = ""
+	
+	match current_level:
+		"LevelOne":
+			level = load("res://Scenes/Levels/level_1.tscn")
+		"LevelTwo":
+			level = load("res://Scenes/Levels/level_2.tscn")
+		"LevelThree":
+			level = load("res://Scenes/Levels/level_3.tscn")
+		"LevelFour":
+			level = load("res://Scenes/Levels/level_4.tscn")
+		"LevelFive":
+			level = load("res://Scenes/Levels/level_5.tscn")
+	
+	var level_instance = level.instantiate()
 	
 	# spawn in cargo at locations
-	for box_position in cargo_locations:
-		var box = load("res://Scenes/box.tscn")
-		var box_instance = box.instantiate()
-		level_instance.get_node("Player/Arm/ItemPlacementMarker").add_child(box_instance)
-		box_instance.position = box_position * hacky_position_scaler
-		level_instance.get_node("Cargo").add_child(box_instance)
+	for item in cargo_locations:
+		var item_scene 
+		
+		print(item[0])
+		
+		match item[0]:
+			"Box":
+				item_scene = load("res://Scenes/box.tscn")
+			"Gear":
+				item_scene = load("res://Scenes/gear.tscn")
+			"Cheese":
+				item_scene = load("res://Scenes/cheese.tscn")
+			"Birdcage":
+				item_scene = load("res://Scenes/bird_cage.tscn")
+				
+		if item_scene:
+			var box_instance = item_scene.instantiate()
+			level_instance.get_node("Player/Arm/ItemPlacementMarker").add_child(box_instance)
+			box_instance.position = item[1] * hacky_position_scaler
+			#level_instance.get_node("BoxController").add_child(box_instance)
+			box_instance.reparent(level_instance.get_node("BoxController"))
 	
 	add_child(level_instance)
