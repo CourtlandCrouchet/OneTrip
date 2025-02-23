@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://qlsgq5vkwxfy"]
+[gd_scene load_steps=10 format=3 uid="uid://qlsgq5vkwxfy"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_buhg6"]
 bg_color = Color(0.917577, 0.445757, 0.191737, 1)
@@ -17,6 +17,15 @@ bg_color = Color(4.42803e-06, 0.590242, 0.494784, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v7e30"]
 bg_color = Color(0, 0.645067, 0.541499, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cd35x"]
+bg_color = Color(0.242608, 0.528493, 0.256121, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5k0n1"]
+bg_color = Color(0.288941, 0.623327, 0.305012, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bu8wl"]
+bg_color = Color(0.206851, 0.457983, 0.220861, 1)
 
 [node name="HUD" type="CanvasLayer"]
 
@@ -41,3 +50,13 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_yrwjt")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_naa1h")
 theme_override_styles/normal = SubResource("StyleBoxFlat_v7e30")
 text = "Level Selector"
+
+[node name="RestackButton" type="Button" parent="Node"]
+offset_left = 928.0
+offset_top = 16.0
+offset_right = 1088.0
+offset_bottom = 56.0
+theme_override_styles/hover = SubResource("StyleBoxFlat_cd35x")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5k0n1")
+theme_override_styles/normal = SubResource("StyleBoxFlat_bu8wl")
+text = "Restack Cargo"
